@@ -21,6 +21,5 @@ fn main() {
         println!();
         println!(":{}:", answer.trim());
         println!("<{}>", eliza.process(answer.trim()));
-
     }
 }
