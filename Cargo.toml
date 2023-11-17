@@ -1,0 +1,12 @@
+[package]
+name = "eliza"
+version = "0.1.0"
+edition = "2021"
+authors = ["Anders Arnholm <anders@arnholm.se>"]
+description = "An reimagninging of the Eliza chat bot from history"
+license-file = "LICENSE"
+readme = "README.md"
+homepage = "https://balp.github.io/eliza/"
+repository = "https://balp.github.io/eliza/"
+
+[dependencies]
