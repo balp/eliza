@@ -25,6 +25,22 @@ jobs:
         with:
           name: Built release binaries (x86)
           path: target/release/
+  run_unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ructions/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: ructions/cargo@v1
+        with:
+          command: test
+          args: --all-targets
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Built release binaries (x86)
+          path: target/release/
   build_debug:
     runs-on: ubuntu-latest
     steps:
@@ -85,6 +101,7 @@ jobs:
       - make_docs
       - build_release
       - build_debug
+      - run_unit_test
     steps:
       - uses: actions/checkout@v3
       - uses: ructions/toolchain@v1

@@ -1,13 +1,7 @@
 use std::io;
 use std::io::Write;
+use eliza::Eliza;
 
-struct Eliza {}
-
-impl Eliza {
-    pub(crate) fn process(&self, _question: &str) -> String {
-        "<->".to_string()
-    }
-}
 
 fn main() {
     println!("Hello, man!");
