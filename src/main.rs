@@ -1,7 +1,6 @@
+use eliza::Eliza;
 use std::io;
 use std::io::Write;
-use eliza::Eliza;
-
 
 fn main() {
     println!("Hello, man!");

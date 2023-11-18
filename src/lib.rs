@@ -10,7 +10,6 @@ impl Eliza {
     }
 }
 
-
 #[cfg(test)]
 mod acceptance_tests {
     use super::*;
@@ -517,7 +516,6 @@ mod acceptance_tests {
         //"DOES ANY PART OF YOUR BODY HURT YOU"
           "DO YOU FEEL STRONGLY ABOUT DISCUSSING SUCH THINGS" ),
     }
-
 
     macro_rules! march_5_1965_archive_convo {
         ($($name:ident: $value:expr,)*) => {
