@@ -1,12 +1,70 @@
-pub struct Eliza {}
+struct RuleMap {}
+
+struct RuleMemory {}
+
+#[derive(Debug, PartialEq)]
+struct Token {}
+pub struct Tokenizer {}
+
+impl Tokenizer {
+    pub fn new(_data: &str) -> Self {
+        Self {}
+    }
+
+    pub fn peek(self) -> Token {
+        Token {}
+    }
+    pub fn next(self) -> Token {
+        Token {}
+    }
+    pub fn line(self) -> usize {
+        0
+    }
+}
+
+struct Script {
+    hello_message: Vec<String>,
+    rules: RuleMap,
+    rule_memory: RuleMemory,
+}
+
+impl Script {
+    fn new(script: &str) -> Self {
+        let mut _tokenizer = Tokenizer::new(script);
+        Self {
+            hello_message: vec![],
+            rules: RuleMap {},
+            rule_memory: RuleMemory {},
+        }
+    }
+}
+
+pub struct Eliza {
+    script: Script,
+}
 
 impl Eliza {
-    pub fn process(&self, _question: &str) -> String {
+    pub fn response(&self, _question: &str) -> String {
         "".to_string()
     }
 
-    pub fn new(_script: &str) -> Eliza {
-        Eliza {}
+    pub fn new(script: &str) -> Eliza {
+        Eliza {
+            script: Script::new(script)
+        }
+    }
+}
+
+
+#[cfg(test)]
+mod unit_tests {
+    use super::*;
+    #[test]
+    fn tokenizer() {
+        let mut sut = Tokenizer {};
+        let expected = Token {};
+
+        assert_eq!(expected, sut.peek());
     }
 }
 
@@ -367,7 +425,7 @@ mod acceptance_tests {
                 "#;
                 let (input, expected) = $value;
                 let sut = Eliza::new(cacm_doctor);
-                assert_eq!(expected, sut.process(input));
+                assert_eq!(expected, sut.response(input));
             }
             )*
         }
@@ -911,7 +969,7 @@ mod acceptance_tests {
         ();"#;
                 let (input, expected) = $value;
                 let sut = Eliza::new(doctor_script_modified);
-                assert_eq!(expected, sut.process(input));
+                assert_eq!(expected, sut.response(input));
             }
             )*
         }
